@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전체 개설 과정 안내 &amp; 비교 | AI Nexus Academy</title>
+  <meta name="description" content="AI Nexus Academy의 4대 실전 트랙: 생성형 AI 입문, 업무 자동화, 딥러닝 부트캠프, LLM & RAG 에이전트 과정 비교">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#EEF2FF', 500: '#6366F1', 600: '#4F46E5', 700: '#4338CA' }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-[#0B0F19] text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+          <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-black tracking-tight text-white group-hover:text-indigo-300 transition">AI NEXUS</span>
+          <span class="text-[10px] tracking-widest text-indigo-400 font-semibold uppercase -mt-1">All Courses</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-white transition">홈으로</a>
+        <a href="courses.html" class="text-indigo-400 font-semibold">전체 과정</a>
+        <a href="apply.html" class="hover:text-white transition">수강 신청</a>
+        <a href="index.html#faq" class="hover:text-white transition">FAQ</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a href="apply.html" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 transition">
+          수강 신청하기
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="pt-36 pb-16 sm:pt-40 sm:pb-20 relative overflow-hidden bg-gradient-hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      
+      <span class="px-3.5 py-1 rounded-full text-xs font-bold glass-pill text-indigo-300 border border-indigo-500/30">
+        COURSE CATALOG &amp; COMPARISON
+      </span>
+      
+      <h1 class="text-3xl sm:text-5xl font-black text-white mt-4 tracking-tight">
+        나에게 딱 맞는 <span class="text-gradient-primary">AI 실전 트랙</span> 찾기
+      </h1>
+      
+      <p class="mt-4 text-sm sm:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+        비전공 입문자부터 전문 개발자까지, 수준과 목표에 맞추어 설계된 4가지 핵심 과정을 비교해 보세요.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="mt-10 flex flex-wrap justify-center gap-2">
+        <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-indigo-600 text-white shadow-lg shadow-indigo-500/25" data-filter="all">
+          전체 (4개)
+        </button>
+        <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-800/80 text-gray-400 hover:text-white" data-filter="beginner">
+          생성 AI 입문
+        </button>
+        <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-800/80 text-gray-400 hover:text-white" data-filter="automation">
+          업무 자동화
+        </button>
+        <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-800/80 text-gray-400 hover:text-white" data-filter="deeplearning">
+          딥러닝 코어
+        </button>
+        <button class="filter-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition bg-gray-800/80 text-gray-400 hover:text-white" data-filter="llm">
+          LLM &amp; RAG 에이전트
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COURSE LIST ==================== -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Course 1 -->
+        <div class="course-card glass-card rounded-3xl p-8 flex flex-col justify-between" data-category="beginner">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold badge-beginner">입문 추천 / 베스트셀러</span>
+              <span class="text-xs text-gray-400">4주 완성</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">생성형 AI &amp; 프롬프트 엔지니어링 마스터</h3>
+            <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+              비전공자도 4주 만에 업무 생산성 10배 달성하는 실전 프롬프트 문법과 ChatGPT, Claude, Midjourney 멀티모달 활용법
+            </p>
+            <div class="space-y-2 py-4 border-t border-b border-gray-800 text-xs text-gray-300">
+              <div class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-emerald-400 mr-2"></i><span>대상: 비전공 직장인, 기획자, 마케터, 크리에이터</span></div>
+              <div class="flex items-center"><i data-lucide="calendar" class="w-4 h-4 text-indigo-400 mr-2"></i><span>일정: 매주 토요일 14:00 ~ 18:00 (총 16시간)</span></div>
+              <div class="flex items-center"><i data-lucide="tv" class="w-4 h-4 text-indigo-400 mr-2"></i><span>형태: 강남 오프라인 + 실시간 Zoom + VOD 평생</span></div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-gray-800 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-gray-400 block">얼리버드 29% 특가</span>
+              <span class="text-2xl font-extrabold text-white">320,000원</span>
+            </div>
+            <a href="course-generative-ai.html" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs sm:text-sm font-semibold transition flex items-center space-x-1">
+              <span>상세 커리큘럼 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Course 2 -->
+        <div class="course-card glass-card rounded-3xl p-8 flex flex-col justify-between" data-category="automation">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold badge-intermediate">직장인 만족도 1위</span>
+              <span class="text-xs text-gray-400">6주 완성</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">업무 자동화 &amp; 노코드 AI 비즈니스 실전</h3>
+            <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+              Make, Zapier, n8n과 LLM을 연결하여 매일 3시간의 반복적인 CS, 데이터 수집, 보고서 작성을 0으로 만드는 무인화 파이프라인
+            </p>
+            <div class="space-y-2 py-4 border-t border-b border-gray-800 text-xs text-gray-300">
+              <div class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-purple-400 mr-2"></i><span>대상: 직장인, 1인 사업가, 스타트업 대표, PM</span></div>
+              <div class="flex items-center"><i data-lucide="calendar" class="w-4 h-4 text-purple-400 mr-2"></i><span>일정: 매주 수요일 19:30 ~ 22:30 (총 18시간)</span></div>
+              <div class="flex items-center"><i data-lucide="tv" class="w-4 h-4 text-purple-400 mr-2"></i><span>형태: 온라인 실시간 라이브 + 슬랙 Q&amp;A</span></div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-gray-800 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-gray-400 block">얼리버드 26% 특가</span>
+              <span class="text-2xl font-extrabold text-white">480,000원</span>
+            </div>
+            <a href="course-business-automation.html" class="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs sm:text-sm font-semibold transition flex items-center space-x-1">
+              <span>상세 커리큘럼 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Course 3 -->
+        <div class="course-card glass-card rounded-3xl p-8 flex flex-col justify-between" data-category="deeplearning">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold badge-intermediate">개발자 코어 트랙</span>
+              <span class="text-xs text-gray-400">8주 집중</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">파이썬 &amp; 딥러닝/머신러닝 코어 부트캠프</h3>
+            <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+              수학적 기초부터 PyTorch 2.x 기반 CNN, ResNet, Transformer 구현까지 밑바닥부터 탄탄하게 정복하는 정통 AI 엔지니어링 과정
+            </p>
+            <div class="space-y-2 py-4 border-t border-b border-gray-800 text-xs text-gray-300">
+              <div class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-blue-400 mr-2"></i><span>대상: 주니어 개발자, 컴퓨터공학 전공자, 커리어 전환 희망자</span></div>
+              <div class="flex items-center"><i data-lucide="calendar" class="w-4 h-4 text-blue-400 mr-2"></i><span>일정: 매주 화/목 19:30 ~ 22:30 (총 48시간)</span></div>
+              <div class="flex items-center"><i data-lucide="tv" class="w-4 h-4 text-blue-400 mr-2"></i><span>형태: 오프라인 코칭 랩 + GPU 무료 인스턴스</span></div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-gray-800 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-gray-400 block">얼리버드 25% 특가</span>
+              <span class="text-2xl font-extrabold text-white">890,000원</span>
+            </div>
+            <a href="course-deep-learning.html" class="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-semibold transition flex items-center space-x-1">
+              <span>상세 커리큘럼 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Course 4 -->
+        <div class="course-card glass-card rounded-3xl p-8 flex flex-col justify-between" data-category="llm">
+          <div>
+            <div class="flex justify-between items-center mb-4">
+              <span class="px-3 py-1 rounded-full text-xs font-bold badge-advanced">최신 테크 트렌드 1위</span>
+              <span class="text-xs text-gray-400">8주 실전</span>
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-2">LLM 서비스 개발 &amp; RAG·AI 에이전트 구축 실무</h3>
+            <p class="text-sm text-gray-300 mb-6 leading-relaxed">
+              LangChain v0.3, LangGraph, LlamaIndex, Vector DB를 활용해 사내 문서 기반 고성능 RAG와 자율 에이전트 서비스를 구현하고 상용 배포
+            </p>
+            <div class="space-y-2 py-4 border-t border-b border-gray-800 text-xs text-gray-300">
+              <div class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-pink-400 mr-2"></i><span>대상: 풀스택/백엔드 개발자, AI 스타트업 창업 엔지니어</span></div>
+              <div class="flex items-center"><i data-lucide="calendar" class="w-4 h-4 text-pink-400 mr-2"></i><span>일정: 매주 토/일 13:00 ~ 17:00 (총 64시간)</span></div>
+              <div class="flex items-center"><i data-lucide="tv" class="w-4 h-4 text-pink-400 mr-2"></i><span>형태: 온/오프 하이브리드 + 팀 데모데이</span></div>
+            </div>
+          </div>
+          <div class="mt-8 pt-6 border-t border-gray-800 flex items-center justify-between">
+            <div>
+              <span class="text-xs text-gray-400 block">얼리버드 23% 특가</span>
+              <span class="text-2xl font-extrabold text-white">1,150,000원</span>
+            </div>
+            <a href="course-llm-agent.html" class="px-5 py-2.5 rounded-xl bg-pink-600 hover:bg-pink-500 text-white text-xs sm:text-sm font-semibold transition flex items-center space-x-1">
+              <span>상세 커리큘럼 보기</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== COMPARISON TABLE ==================== -->
+  <section class="py-20 bg-[#0e1320] border-t border-b border-gray-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-xs font-bold tracking-widest text-indigo-400 uppercase mb-2">QUICK COMPARISON</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold text-white">한눈에 보는 과정 비교표</p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs sm:text-sm border-collapse">
+          <thead>
+            <tr class="border-b border-gray-800 text-gray-400 bg-gray-900/60">
+              <th class="p-4 font-bold text-white">항목</th>
+              <th class="p-4 font-bold text-indigo-400">생성 AI 입문 마스터</th>
+              <th class="p-4 font-bold text-purple-400">업무 자동화 실전</th>
+              <th class="p-4 font-bold text-blue-400">딥러닝 부트캠프</th>
+              <th class="p-4 font-bold text-pink-400">LLM &amp; RAG 에이전트</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-800/60 text-gray-300">
+            <tr>
+              <td class="p-4 font-semibold text-white">난이도</td>
+              <td class="p-4">입문 (★☆☆☆☆)</td>
+              <td class="p-4">초중급 (★★☆☆☆)</td>
+              <td class="p-4">중급 (★★★☆☆)</td>
+              <td class="p-4">고급 (★★★★☆)</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-white">선수 지식</td>
+              <td class="p-4 text-emerald-400">전혀 없음 (비전공자)</td>
+              <td class="p-4 text-emerald-400">코딩 지식 불필요</td>
+              <td class="p-4">파이썬 기초 문법</td>
+              <td class="p-4">웹/백엔드 개발 기초</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-white">주요 도구</td>
+              <td class="p-4">ChatGPT-4o, Claude 3.5, Midjourney</td>
+              <td class="p-4">Make, Zapier, n8n, OpenAI API</td>
+              <td class="p-4">PyTorch 2.x, NumPy, YOLO, WandB</td>
+              <td class="p-4">LangChain v0.3, LangGraph, Chroma</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-white">학습 기간</td>
+              <td class="p-4">4주 (주 1회, 16시간)</td>
+              <td class="p-4">6주 (주 1회, 18시간)</td>
+              <td class="p-4">8주 (주 2회, 48시간)</td>
+              <td class="p-4">8주 (주 2회, 64시간)</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-white">수강료 (할인가)</td>
+              <td class="p-4 font-bold text-white">320,000원</td>
+              <td class="p-4 font-bold text-white">480,000원</td>
+              <td class="p-4 font-bold text-white">890,000원</td>
+              <td class="p-4 font-bold text-white">1,150,000원</td>
+            </tr>
+            <tr>
+              <td class="p-4 font-semibold text-white">상세 안내</td>
+              <td class="p-4"><a href="course-generative-ai.html" class="text-indigo-400 hover:underline">상세보기 &rarr;</a></td>
+              <td class="p-4"><a href="course-business-automation.html" class="text-purple-400 hover:underline">상세보기 &rarr;</a></td>
+              <td class="p-4"><a href="course-deep-learning.html" class="text-blue-400 hover:underline">상세보기 &rarr;</a></td>
+              <td class="p-4"><a href="course-llm-agent.html" class="text-pink-400 hover:underline">상세보기 &rarr;</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#080B12] border-t border-gray-800/80 py-12 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
+      <div>
+        <p class="font-bold text-white text-sm mb-1">AI NEXUS ACADEMY</p>
+        <p class="text-gray-400">서울특별시 강남구 테헤란로 152 강남파이낸스센터 8층 | 02-555-8900</p>
+      </div>
+      <div class="mt-4 sm:mt-0 text-gray-400">
+        <a href="index.html" class="hover:text-white mr-4">메인 홈</a>
+        <a href="apply.html" class="hover:text-white mr-4">수강 신청</a>
+        <span>© 2026 AI Nexus Academy.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>생성형 AI & 프롬프트 엔지니어링 마스터 과정 | AI Nexus Academy</title>
+  <meta name="description" content="비전공자도 4주 만에 업무 생산성 10배 달성하는 실전 프롬프트 문법과 ChatGPT, Claude, Midjourney 멀티모달 활용법">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#EEF2FF', 500: '#6366F1', 600: '#4F46E5', 700: '#4338CA' }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-[#0B0F19] text-gray-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+          <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-black tracking-tight text-white group-hover:text-indigo-300 transition">AI NEXUS</span>
+          <span class="text-[10px] tracking-widest text-indigo-400 font-semibold uppercase -mt-1">Academy & Labs</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-white transition">홈으로</a>
+        <a href="courses.html" class="hover:text-white transition">전체 과정</a>
+        <a href="#curriculum" class="hover:text-white transition">커리큘럼</a>
+        <a href="#projects" class="hover:text-white transition">프로젝트</a>
+        <a href="#instructor" class="hover:text-white transition">강사진</a>
+        <a href="#apply" class="hover:text-white transition">수강 신청</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a href="#apply" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-500/25 transition">
+          수강 신청하기
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="pt-36 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden bg-gradient-hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <div class="flex items-center space-x-2 text-xs text-gray-400 mb-6">
+        <a href="index.html" class="hover:text-white">홈</a>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        <a href="courses.html" class="hover:text-white">과정 안내</a>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        <span class="text-indigo-400 font-semibold">생성형 AI & 프롬프트 마스터</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-bold badge-beginner">입문 추천 / 직장인 필수</span>
+            <div class="flex items-center text-amber-400 text-xs">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400 mr-1"></i>
+              <span class="font-bold text-white mr-1">4.9</span>
+              <span class="text-gray-400">(리뷰 420개)</span>
+            </div>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            생성형 AI &amp;<br>
+            <span class="text-gradient-primary">프롬프트 엔지니어링 마스터</span>
+          </h1>
+
+          <p class="mt-4 text-base sm:text-lg text-gray-300 leading-relaxed">
+            비전공자도 4주 만에 업무 생산성을 10배 끌어올리는 실전 마스터클래스.<br class="hidden sm:inline">
+            ChatGPT-4o, Claude 3.5, Midjourney를 활용해 기획서·보고서·카피라이팅·디자인 시안을 순식간에 완성합니다.
+          </p>
+
+          <!-- Skills Badges -->
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">ChatGPT-4o</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">Claude 3.5 Sonnet</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">Midjourney v6</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">Runway Gen-3</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-indigo-500/10 text-indigo-300 border border-indigo-500/30">Custom GPTs</span>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+            <a href="#apply" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-sm shadow-xl shadow-indigo-600/30 transition text-center">
+              지금 얼리버드 수강 신청
+            </a>
+            <a href="#curriculum" class="w-full sm:w-auto px-6 py-4 rounded-xl bg-gray-800/80 hover:bg-gray-800 text-gray-200 text-sm font-semibold transition text-center border border-gray-700">
+              커리큘럼 자세히 보기
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Quick Info Card -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border border-indigo-500/30 shadow-2xl relative">
+            <span class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-rose-500 text-white text-xs font-bold shadow-md">
+              선착순 30명 얼리버드 마감 임박
+            </span>
+
+            <div class="mb-6">
+              <span class="text-xs text-gray-400 block mb-1">수강료 안내</span>
+              <div class="flex items-baseline space-x-3">
+                <span class="text-3xl sm:text-4xl font-black text-white">320,000원</span>
+                <span class="text-sm text-gray-500 line-through">450,000원</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-rose-500/20 text-rose-400 font-bold">29% 할인</span>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-1">* 교재/프롬프트북 무상 제공, VOD 평생 소장권 포함</p>
+            </div>
+
+            <div class="space-y-4 py-4 border-t border-b border-gray-800 text-xs sm:text-sm text-gray-300">
+              <div class="flex justify-between">
+                <span class="text-gray-400">수강 기간</span>
+                <span class="font-semibold text-white">4주 완성 (주 1회, 총 16시간)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">강의 일정</span>
+                <span class="font-semibold text-white">매주 토요일 14:00 ~ 18:00</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">교육 방식</span>
+                <span class="font-semibold text-white text-right">강남 캠퍼스 + 실시간 Zoom + VOD 평생</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">수강 대상</span>
+                <span class="font-semibold text-emerald-400">비전공자 / 직장인 / 기획자</span>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <a href="#apply" class="block w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-center text-sm shadow-lg shadow-indigo-600/30 transition">
+                이 과정 수강 신청하기
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== TARGET AUDIENCE ==================== -->
+  <section class="py-20 bg-[#0e1320] border-t border-b border-gray-800/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-xs font-bold tracking-widest text-indigo-400 uppercase mb-2">TARGET AUDIENCE</h2>
+        <p class="text-2xl sm:text-3xl font-extrabold text-white">이런 분들께 강력히 추천합니다</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center mb-4">
+            <i data-lucide="briefcase" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">야근에 시달리는 직장인</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            보고서, 기획안, 엑셀 정리, 회의록 요약에 수시간을 쏟고 있는 모든 직무의 실무자
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4">
+            <i data-lucide="megaphone" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">마케터 &amp; 기획자</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            고전환 카피라이팅, SNS 카드뉴스, 블로그 아티클을 매일 대량으로 뽑아내야 하는 분
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center mb-4">
+            <i data-lucide="palette" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">디자이너 &amp; 크리에이터</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            미드저니와 생성 AI 비디오로 시안 제작 시간을 90% 줄이고 아이디어를 시각화하고 싶은 분
+          </p>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
+            <i data-lucide="compass" class="w-5 h-5"></i>
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">AI 시대를 대비하는 비전공자</h3>
+          <p class="text-xs text-gray-400 leading-relaxed">
+            코딩 지식은 없지만 인공지능을 실무 도구로 완벽하게 길들여 차별화된 몸값을 만들고 싶은 분
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== DETAILED CURRICULUM ==================== -->
+  <section id="curriculum" class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-xs font-bold tracking-widest text-indigo-400 uppercase mb-3">CURRICULUM</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          4주 완성 <span class="text-gradient-primary">실전 커리큘럼</span>
+        </p>
+        <p class="text-gray-400 text-sm mt-3">매주 4시간, 이론 20% + 강사 실시간 코칭 기반 실습 80%</p>
+      </div>
+
+      <div class="accordion-group space-y-4">
+        
+        <!-- Week 1 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-600/20 text-indigo-400 font-bold text-xs">1주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">생성형 AI 패러다임과 프롬프트 엔지니어링 기초</h3>
+                <p class="text-xs text-gray-400 mt-1">ChatGPT, Claude, Gemini의 작동 원리와 할루시네이션 통제</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content open px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2.5">
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>LLM(대규모 언어 모델)의 학습 원리와 할루시네이션(환각 현상) 제어 공식</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>ChatGPT-4o vs Claude 3.5 Sonnet vs Gemini 1.5 Pro 장단점 분석 및 모델 선별 기준</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>프롬프트 구조 설계: 페르소나 부여(Role), 작업 지시(Instruction), 문맥(Context), 제약(Constraints)</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>생각의 사슬(Chain-of-Thought)과 Few-Shot 기법을 활용한 답변 품질 5배 향상 실습</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 2 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-600/20 text-indigo-400 font-bold text-xs">2주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">직무별 초밀착 프롬프트 프레임워크 &amp; 문서 작성 자동화</h3>
+                <p class="text-xs text-gray-400 mt-1">기획서, 보고서, 마케팅 카피, 대량 데이터 요약 30초 완성</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2.5">
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>기획/사업개발: 10분 만에 완성하는 비즈니스 모델 캔버스 및 시장 경쟁 분석 보고서</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>마케팅/콘텐츠: 페르소나 분석 기반 고전환 카피라이팅, 블로그 SEO 글, 카드뉴스 스크립트 작성</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>데이터 분석 및 요약: 100페이지 산업 보고서 PDF 핵심 요약, 수치 데이터 표 추출 및 시각화 프롬프트</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>Claude Projects 기능을 활용한 사내 지식 기반 업무 지원 환경 구축</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 3 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-600/20 text-indigo-400 font-bold text-xs">3주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">멀티모달 AI: 이미지, 영상, 오디오 생성 크리에이티브</h3>
+                <p class="text-xs text-gray-400 mt-1">Midjourney v6, Runway Gen-3, Suno AI로 비주얼 패키지 완성</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2.5">
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>Midjourney v6: 시네마틱 조명, 카메라 렌즈, 화풍 제어 매개변수(--ar, --stylize, --sref) 마스터</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>제품 촬영 시안 및 로고, 모바일 앱 UI 디자인 목업 생성 기법</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>Runway Gen-3 & Kling AI: 정지 이미지에 모션을 부여하여 4K 광고 영상 제작하기</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>Suno AI: 1분 만에 브랜드 CM송 및 유튜브 BGM 제작하기</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 4 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-600/20 text-indigo-400 font-bold text-xs">4주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">나만의 Custom GPTs 빌딩과 지속 가능한 AI 워크플로우 완성</h3>
+                <p class="text-xs text-gray-400 mt-1">사내 지식 챗봇 배포, 포트폴리오 데모데이 및 1:1 피드백</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2.5">
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>코딩 없이 만드는 나만의 맞춤형 GPTs: Instructions 작성 원칙과 Knowledge 최적화</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>팀원들과 공유 가능한 사내 FAQ 챗봇 및 업무 도우미 배포 실습</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>수강생 1인 1실무 프로젝트 최종 발표회 및 강사 1:1 디테일 피드백</li>
+              <li class="flex items-start"><span class="text-indigo-400 mr-2 font-bold">•</span>수료증 발급 및 AI Nexus 지속 네트워킹 커뮤니티 초대</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== INSTRUCTOR SECTION ==================== -->
+  <section id="instructor" class="py-20 bg-[#0e1320] border-t border-b border-gray-800/60">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-10 flex flex-col sm:flex-row items-center gap-8">
+        <div class="w-32 h-32 rounded-full overflow-hidden border-2 border-indigo-500/40 p-1 flex-shrink-0">
+          <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80" alt="이지은 디렉터" class="w-full h-full object-cover rounded-full">
+        </div>
+        <div>
+          <span class="px-2.5 py-0.5 rounded text-xs bg-indigo-500/20 text-indigo-400 font-bold">담당 디렉터</span>
+          <h3 class="text-2xl font-bold text-white mt-1">이지은 디렉터</h3>
+          <p class="text-xs text-indigo-300 font-medium mb-3">생성형 AI &amp; 비즈니스 효율화 총괄</p>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            "많은 분들이 AI를 어떻게 시작해야 할지 막막해합니다. 하지만 복잡한 수학이나 코딩은 전혀 필요 없습니다. 올바른 질문을 던지고, 결과를 비판적으로 다듬는 프롬프트 설계법만 익히면 여러분도 내일부터 AI를 부리는 리더가 될 수 있습니다."
+          </p>
+          <div class="mt-4 flex flex-wrap gap-2 text-xs text-gray-400">
+            <span>• 국내 50개사 AI 프롬프트 컨설팅</span>
+            <span>• 누적 수강생 3,000+ 명 지도</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== APPLICATION FORM ==================== -->
+  <section id="apply" class="py-24 relative overflow-hidden bg-gradient-glow">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-indigo-500/40 shadow-2xl">
+        <div class="text-center mb-8">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-indigo-500/20 text-indigo-300">얼리버드 29% 할인 적용</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mt-3">
+            생성형 AI &amp; 프롬프트 마스터 수강 신청
+          </h2>
+          <p class="text-xs sm:text-sm text-gray-300 mt-2">
+            선착순 정원 마감 시 조기 종료됩니다. 정보를 입력해주시면 안내 문자를 발송해 드립니다.
+          </p>
+        </div>
+
+        <form data-ajax-form class="space-y-4">
+          <input type="hidden" name="course" value="generative-ai">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1.5">이름 *</label>
+              <input type="text" name="name" required placeholder="홍길동" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-indigo-500 focus:outline-none transition">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1.5">연락처 *</label>
+              <input type="tel" name="phone" required placeholder="010-1234-5678" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-indigo-500 focus:outline-none transition">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">이메일 *</label>
+            <input type="email" name="email" required placeholder="example@email.com" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-indigo-500 focus:outline-none transition">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">참여 희망 방식</label>
+            <select name="format" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-indigo-500 focus:outline-none transition">
+              <option value="offline">강남 오프라인 현장 참석 (선착순 20명)</option>
+              <option value="online">실시간 양방향 Zoom 온라인 참여</option>
+              <option value="hybrid">오프라인 + 온라인 교차 참여</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">현재 하시는 일 / 학습 목표</label>
+            <textarea name="message" rows="3" placeholder="예: 이커머스 마케팅 기획자인데 카피라이팅과 광고 이미지 생성을 자동화하고 싶습니다." class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-indigo-500 focus:outline-none transition resize-none"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-base shadow-xl shadow-indigo-600/30 transition transform hover:-translate-y-0.5">
+              320,000원에 얼리버드 수강 신청 완료하기
+            </button>
+          </div>
+          <p class="text-[11px] text-gray-400 text-center">
+            수강 확정 전까지 결제는 진행되지 않으며, 무료 상담 후 결제 링크가 전송됩니다.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#080B12] border-t border-gray-800/80 py-12 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
+      <div>
+        <p class="font-bold text-white text-sm mb-1">AI NEXUS ACADEMY</p>
+        <p class="text-gray-400">서울특별시 강남구 테헤란로 152 강남파이낸스센터 8층 | 02-555-8900</p>
+      </div>
+      <div class="mt-4 sm:mt-0 text-gray-400">
+        <a href="index.html" class="hover:text-white mr-4">메인 홈</a>
+        <a href="courses.html" class="hover:text-white mr-4">전체 과정</a>
+        <span>© 2026 AI Nexus Academy.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

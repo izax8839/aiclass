@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM 서비스 개발 & RAG·AI 에이전트 구축 실무 | AI Nexus Academy</title>
+  <meta name="description" content="LangChain v0.3, LangGraph, LlamaIndex, Vector DB를 활용해 사내 문서 기반 고성능 RAG와 자율 멀티 에이전트 서비스를 구현하고 상용 배포하는 최고급 실무 과정">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: { 50: '#FDF2F8', 500: '#EC4899', 600: '#DB2777', 700: '#BE185D' }
+          }
+        }
+      }
+    }
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body class="bg-[#0B0F19] text-gray-100 antialiased selection:bg-pink-500 selection:text-white">
+
+  <!-- ==================== HEADER ==================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="index.html" class="flex items-center space-x-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-pink-600 via-purple-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-pink-500/25 group-hover:scale-105 transition-transform">
+          <i data-lucide="layers" class="w-5 h-5 text-white"></i>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl font-black tracking-tight text-white group-hover:text-pink-300 transition">AI NEXUS</span>
+          <span class="text-[10px] tracking-widest text-pink-400 font-semibold uppercase -mt-1">LLM &amp; Agent Lab</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+        <a href="index.html" class="hover:text-white transition">홈으로</a>
+        <a href="courses.html" class="hover:text-white transition">전체 과정</a>
+        <a href="#curriculum" class="hover:text-white transition">커리큘럼</a>
+        <a href="#projects" class="hover:text-white transition">에이전트 데모</a>
+        <a href="#instructor" class="hover:text-white transition">강사진</a>
+        <a href="#apply" class="hover:text-white transition">수강 신청</a>
+      </nav>
+
+      <div class="flex items-center space-x-4">
+        <a href="#apply" class="hidden sm:inline-flex px-5 py-2.5 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-semibold text-sm shadow-lg shadow-pink-500/25 transition">
+          수강 신청하기
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="pt-36 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden bg-gradient-hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Breadcrumb -->
+      <div class="flex items-center space-x-2 text-xs text-gray-400 mb-6">
+        <a href="index.html" class="hover:text-white">홈</a>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        <a href="courses.html" class="hover:text-white">과정 안내</a>
+        <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+        <span class="text-pink-400 font-semibold">LLM 서비스 개발 &amp; RAG 에이전트</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Content -->
+        <div class="lg:col-span-7">
+          <div class="flex items-center space-x-3 mb-4">
+            <span class="px-3 py-1 rounded-full text-xs font-bold badge-advanced">최신 테크 트렌드 1위</span>
+            <div class="flex items-center text-amber-400 text-xs">
+              <i data-lucide="star" class="w-4 h-4 fill-amber-400 mr-1"></i>
+              <span class="font-bold text-white mr-1">4.98</span>
+              <span class="text-gray-400">(리뷰 310개)</span>
+            </div>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            LLM 서비스 개발 &amp;<br>
+            <span class="text-gradient-primary">RAG·AI 에이전트 구축 실무</span>
+          </h1>
+
+          <p class="mt-4 text-base sm:text-lg text-gray-300 leading-relaxed">
+            단순 API 래퍼를 넘어, 엔터프라이즈급 AI 아키텍처를 직접 설계합니다.<br class="hidden sm:inline">
+            LangChain v0.3, LangGraph, LlamaIndex, Vector DB를 결합해 복잡한 사내 문서 기반 초고성능 RAG와 자율 협업 멀티 에이전트 시스템을 프로덕션으로 배포합니다.
+          </p>
+
+          <!-- Skills Badges -->
+          <div class="mt-6 flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-lg text-xs bg-pink-500/10 text-pink-300 border border-pink-500/30">LangChain v0.3 (LCEL)</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-pink-500/10 text-pink-300 border border-pink-500/30">LangGraph</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-pink-500/10 text-pink-300 border border-pink-500/30">LlamaIndex</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-pink-500/10 text-pink-300 border border-pink-500/30">Chroma &amp; Pinecone</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-pink-500/10 text-pink-300 border border-pink-500/30">Advanced RAG (HyDE, Re-ranking)</span>
+            <span class="px-3 py-1 rounded-lg text-xs bg-pink-500/10 text-pink-300 border border-pink-500/30">LangSmith</span>
+          </div>
+
+          <div class="mt-8 flex flex-col sm:flex-row items-center gap-4">
+            <a href="#apply" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-bold text-sm shadow-xl shadow-pink-600/30 transition text-center">
+              얼리버드 23% 특가 신청
+            </a>
+            <a href="#curriculum" class="w-full sm:w-auto px-6 py-4 rounded-xl bg-gray-800/80 hover:bg-gray-800 text-gray-200 text-sm font-semibold transition text-center border border-gray-700">
+              커리큘럼 상세 보기
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Quick Info Card -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 border border-pink-500/30 shadow-2xl relative">
+            <span class="absolute -top-3 right-6 px-3 py-1 rounded-full bg-pink-500 text-white text-xs font-bold shadow-md">
+              LangSmith 라이선스 무료 지원
+            </span>
+
+            <div class="mb-6">
+              <span class="text-xs text-gray-400 block mb-1">수강료 안내</span>
+              <div class="flex items-baseline space-x-3">
+                <span class="text-3xl sm:text-4xl font-black text-white">1,150,000원</span>
+                <span class="text-sm text-gray-500 line-through">1,500,000원</span>
+                <span class="text-xs px-2 py-0.5 rounded bg-pink-500/20 text-pink-400 font-bold">23% 할인</span>
+              </div>
+              <p class="text-[11px] text-gray-400 mt-1">* 상용 서비스 런칭용 보일러플레이트 코드 &amp; 인프라 템플릿 포함</p>
+            </div>
+
+            <div class="space-y-4 py-4 border-t border-b border-gray-800 text-xs sm:text-sm text-gray-300">
+              <div class="flex justify-between">
+                <span class="text-gray-400">수강 기간</span>
+                <span class="font-semibold text-white">8주 실전 (주 2회, 총 64시간)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">강의 일정</span>
+                <span class="font-semibold text-white">매주 토/일 13:00 ~ 17:00</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">교육 방식</span>
+                <span class="font-semibold text-white text-right">온/오프라인 하이브리드 + 팀 데모데이</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-400">수강 대상</span>
+                <span class="font-semibold text-pink-400">백엔드/풀스택 개발자, AI 스타트업</span>
+              </div>
+            </div>
+
+            <div class="mt-6">
+              <a href="#apply" class="block w-full py-3.5 rounded-xl bg-gradient-to-r from-pink-600 to-indigo-600 hover:from-pink-500 hover:to-indigo-500 text-white font-bold text-center text-sm shadow-lg shadow-pink-600/30 transition">
+                이 과정 수강 신청하기
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== DETAILED CURRICULUM ==================== -->
+  <section id="curriculum" class="py-24 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-16">
+        <h2 class="text-xs font-bold tracking-widest text-pink-400 uppercase mb-3">CURRICULUM</h2>
+        <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          8주 완성 <span class="text-gradient-primary">LLM &amp; RAG 에이전트 마스터</span>
+        </p>
+        <p class="text-gray-400 text-sm mt-3">기초 API 호출부터 멀티 에이전트 자율 협업 및 상용 LLMOps까지</p>
+      </div>
+
+      <div class="accordion-group space-y-4">
+        
+        <!-- Week 1 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-pink-600/20 text-pink-400 font-bold text-xs">1주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">모던 LLM 생태계와 고속 추론 환경 구축</h3>
+                <p class="text-xs text-gray-400 mt-1">OpenAI, Claude, Ollama, vLLM 로컬 실행 및 스트리밍 아키텍처</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content open px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>OpenAI GPT-4o, Anthropic Claude 3.5, 로컬 오픈소스 Llama 3 / Mistral 특성 비교</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>Ollama 및 vLLM을 활용한 로컬 서버 고속 추론 및 GPU 메모리 양자화 최적화</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>FastAPI 기반 Server-Sent Events (SSE) 실시간 타자 효과 스트리밍 파이프라인 구현</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 2 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-pink-600/20 text-pink-400 font-bold text-xs">2주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">LangChain v0.3 핵심 컴포넌트 완벽 해부 (LCEL)</h3>
+                <p class="text-xs text-gray-400 mt-1">선언적 파이프라인 구성, Pydantic 파싱, 복합 메모리 관리</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>LangChain Expression Language (LCEL)의 체이닝 파이프라인과 비동기 최적화</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>PydanticOutputParser를 이용해 정확한 JSON 데이터 강제 추출하기</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>대화 문맥 유지: ConversationSummaryBufferMemory 및 VectorStore Retriever Memory</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 3 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-pink-600/20 text-pink-400 font-bold text-xs">3주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">임베딩(Embedding) 원리와 Vector Database 정복</h3>
+                <p class="text-xs text-gray-400 mt-1">유사도 메트릭, Chroma, Pinecone, 하이브리드 검색 구축</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>임베딩 모델 비교 (OpenAI text-embedding-3 vs BGE 한국어 특화 임베딩)</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>HNSW 인덱싱 알고리즘과 벡터 유사도(Cosine, Dot Product) 차이</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>Chroma DB 로컬 임베디드 및 클라우드 Pinecone 대용량 인덱스 구축 실습</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 4 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-pink-600/20 text-pink-400 font-bold text-xs">4주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">Advanced RAG: 검색 증강 생성 품질 극대화 기법</h3>
+                <p class="text-xs text-gray-400 mt-1">의미론적 청킹, HyDE, Cohere Re-ranker, Context Compression</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>시맨틱 청킹(Semantic Chunking): 문맥 단위 분할로 정보 유실 차단</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>HyDE (가상 문서 임베딩) 및 Multi-Query 생성으로 검색 누락 해결</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>Cohere Rerank 모델을 결합한 2단계 검색 재순위화로 정확도 30% 개선</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 5 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-pink-600/20 text-pink-400 font-bold text-xs">5주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">LlamaIndex를 활용한 비정형 문서 인덱싱 &amp; 쿼리 엔진</h3>
+                <p class="text-xs text-gray-400 mt-1">LlamaParse로 표/도표 정밀 추출, SQL DB와 결합한 하이브리드 엔진</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>복잡한 서식의 PDF 보고서와 다단 문서를 완벽 파싱하는 LlamaParse 실전</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>Sub-Question Query Engine: 복합 질문을 하위 질문으로 쪼개어 취합하기</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>사내 RDB(PostgreSQL)와 벡터 검색을 묶은 통합 질의 시스템 완성</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 6 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-pink-600/20 text-pink-400 font-bold text-xs">6주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">Function Calling과 LangGraph 기반 자율 AI 에이전트</h3>
+                <p class="text-xs text-gray-400 mt-1">상태 머신(State Machine), 휴먼 인 더 루프(승인 절차), 툴 연동</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>LLM이 스스로 도구를 선택하고 인자를 채워넣는 Function Calling 원리</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>LangGraph 그래프 아키텍처: State, Node, Edge, Conditional Branching</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>Human-in-the-loop: 위험 액션 실행 전 사람의 승인을 받는 인터럽트 설계</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 7 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-pink-600/20 text-pink-400 font-bold text-xs">7주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">멀티 에이전트 협업 시스템(Multi-Agent Systems)</h3>
+                <p class="text-xs text-gray-400 mt-1">리서처 + 기획자 + 코더 에이전트가 팀을 이뤄 문제를 해결하는 시스템</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>Supervisor 에이전트가 하위 전문 에이전트에게 작업을 분배하고 검수하는 패턴</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>자율 주식 분석 및 투자 리포트 자동 작성 멀티 에이전트 시스템 실습</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>Next.js 모던 웹 프론트엔드와 LangGraph 백엔드 통합</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Week 8 -->
+        <div class="border border-gray-800 rounded-2xl bg-[#111827]/80 overflow-hidden">
+          <button type="button" class="accordion-header w-full flex items-center justify-between p-6 text-left hover:bg-gray-800/40 transition">
+            <div class="flex items-center space-x-4">
+              <span class="px-3 py-1.5 rounded-lg bg-pink-600/20 text-pink-400 font-bold text-xs">8주차</span>
+              <div>
+                <h3 class="text-base sm:text-lg font-bold text-white">LLMOps: Ragas 정량 평가, LangSmith 모니터링, 데모데이</h3>
+                <p class="text-xs text-gray-400 mt-1">프로덕션 보안(프롬프트 인젝션 방어), 비용 추적, 최종 프로젝트 시연</p>
+              </div>
+            </div>
+            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-gray-400 transition-transform flex-shrink-0"></i>
+          </button>
+          <div class="accordion-content px-6 pb-6 text-sm text-gray-300 border-t border-gray-800/60 pt-4">
+            <ul class="space-y-2">
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>Ragas를 이용한 RAG 4대 지표(Faithfulness, Answer Relevance, Context Recall) 자동 평가</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>LangSmith 트레이싱으로 레이턴시 병목 구간 및 토큰 지출 실시간 분석</li>
+              <li class="flex items-start"><span class="text-pink-400 mr-2 font-bold">•</span>팀 프로젝트 최종 라이브 데모데이 및 테크 리드 1:1 아키텍처 피드백</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== APPLICATION FORM ==================== -->
+  <section id="apply" class="py-24 relative overflow-hidden bg-gradient-glow">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border border-pink-500/40 shadow-2xl">
+        <div class="text-center mb-8">
+          <span class="px-3 py-1 rounded-full text-xs font-bold bg-pink-500/20 text-pink-300">얼리버드 23% 할인 적용</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mt-3">
+            LLM 서비스 &amp; RAG 에이전트 실무 신청
+          </h2>
+          <p class="text-xs sm:text-sm text-gray-300 mt-2">
+            실전 팀 프로젝트와 데모데이가 포함된 최고급 실전 트랙입니다.
+          </p>
+        </div>
+
+        <form data-ajax-form class="space-y-4">
+          <input type="hidden" name="course" value="llm-agent">
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1.5">이름 *</label>
+              <input type="text" name="name" required placeholder="홍길동" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-pink-500 focus:outline-none transition">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1.5">연락처 *</label>
+              <input type="tel" name="phone" required placeholder="010-1234-5678" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-pink-500 focus:outline-none transition">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">이메일 *</label>
+            <input type="email" name="email" required placeholder="example@email.com" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-pink-500 focus:outline-none transition">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">개발 주요 직무 / 주력 언어</label>
+            <input type="text" name="stack" placeholder="예: 백엔드 개발자 2년차 / Python, FastAPI" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-pink-500 focus:outline-none transition">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">구현하고 싶은 서비스 또는 수강 목적</label>
+            <textarea name="message" rows="3" placeholder="예: 사내 수천 페이지 분량의 기술 문서를 정확히 검색하는 RAG 챗봇을 회사 솔루션에 도입해야 합니다." class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white text-sm focus:border-pink-500 focus:outline-none transition resize-none"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold text-base shadow-xl shadow-pink-600/30 transition transform hover:-translate-y-0.5">
+              1,150,000원에 얼리버드 수강 신청 완료하기
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-[#080B12] border-t border-gray-800/80 py-12 text-gray-400 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
+      <div>
+        <p class="font-bold text-white text-sm mb-1">AI NEXUS ACADEMY</p>
+        <p class="text-gray-400">서울특별시 강남구 테헤란로 152 강남파이낸스센터 8층 | 02-555-8900</p>
+      </div>
+      <div class="mt-4 sm:mt-0 text-gray-400">
+        <a href="index.html" class="hover:text-white mr-4">메인 홈</a>
+        <a href="courses.html" class="hover:text-white mr-4">전체 과정</a>
+        <span>© 2026 AI Nexus Academy.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
