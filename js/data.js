@@ -428,31 +428,31 @@ const COURSES_DATA = [
 
 const INSTRUCTORS_DATA = [
   {
-    name: "정민우 테크 리드",
-    role: "AI Nexus 대표 강사 & AI 엔지니어",
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80",
-    tags: ["전 카카오 AI R&D", "LLM/RAG 전문", "컴퓨터공학 석사"],
-    bio: "카카오 및 글로벌 테크 기업에서 대규모 언어 모델 서빙 및 추천 시스템을 개발했습니다. 5,000시간 이상의 실무 강의를 통해 비전공자도 쉽게 이해할 수 있는 실전 노하우를 전달합니다."
+    name: "produce 김정훈",
+    role: "총괄 프로듀서 & AI 엔지니어",
+    photo: "images/mentor-kim.svg",
+    tags: ["현역 테크 AI R&D", "LLM/RAG 파이프라인", "AI 서비스 프로듀싱"],
+    bio: "현역 테크 기업에서 대규모 언어 모델 서빙과 AI 서비스 파이프라인을 총괄 프로듀싱하고 있습니다. 단순한 이론에 그치지 않고, 비즈니스에 즉각 도입 가능한 살아있는 실전 결과물을 이끌어냅니다."
   },
   {
-    name: "이지은 디렉터",
-    role: "생성형 AI & 비즈니스 자동화 총괄",
-    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80",
-    tags: ["스타트업 COO 역임", "No-Code 마스터", "비즈니스 효율화 컨설턴트"],
-    bio: "국내 50개 이상 기업의 업무 자동화 파이프라인을 직접 구축하고 자문했습니다. 복잡한 코딩 없이 비즈니스 가치를 즉시 창출하는 실전형 생성 AI 방법론의 권위자입니다."
+    name: "최수현 멘토",
+    role: "생성형 AI & 비즈니스 자동화 수석 멘토",
+    photo: "images/mentor-choi.svg",
+    tags: ["현역 테크 자동화 리드", "No-Code 마스터", "업무 효율화 컨설턴트"],
+    bio: "현역 테크 스타트업에서 자동화 시스템과 생성 AI 워크플로우를 주도하고 있습니다. 50개 이상의 실무 자동화 파이프라인을 구축한 노하우로 비전공자도 단기간에 AI를 무기화하도록 코칭합니다."
   },
   {
-    name: "박건호 박사",
-    role: "딥러닝 & 컴퓨터 비전 수석 연구원",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=500&q=80",
-    tags: ["KAIST 인공지능 박사", "NeurIPS 논문 등재", "PyTorch 공식 커뮤니티"],
-    bio: "최신 비전/자연어 딥러닝 연구와 산업체 프로젝트를 성공적으로 이끌어왔습니다. 수학적 원리의 명쾌한 시각화와 튼튼한 코드 구현 훈련을 제공합니다."
+    name: "구영회 멘토",
+    role: "딥러닝 & LLM 시스템 수석 연구 멘토",
+    photo: "images/mentor-koo.svg",
+    tags: ["현역 테크 AI 연구소", "컴퓨터 비전 & NLP", "PyTorch Core"],
+    bio: "현역 테크 기업 연구소에서 최신 비전/자연어 딥러닝 연구와 산업체 프로젝트를 성공적으로 이끌어왔습니다. 수학적 원리의 명쾌한 시각화와 튼튼한 프로덕션 코드 구현 훈련을 제공합니다."
   }
 ];
 
 const REVIEWS_DATA = [
   {
-    name: "김수현 님",
+    name: "김민지 님",
     role: "스타트업 프로덕트 디자이너 / 생성형 AI 마스터 수료",
     rating: 5,
     content: "비전공자라 처음엔 걱정했는데, 첫 주부터 바로 업무에 써먹을 수 있는 프롬프트 팁이 쏟아졌습니다. 지금은 미드저니로 시안을 만들고 카피라이팅까지 AI로 뚝딱 끝내서 야근이 완전히 사라졌어요!",

@@ -18,6 +18,10 @@ aiclass/
 ├── apply.html                   # 수강 신청 및 1:1 무료 상담 접수 전용 페이지
 ├── css/
 │   └── custom.css               # Pretendard 웹폰트, 글래스모피즘, 네온 글로우, 커스텀 애니메이션
+├── images/
+│   ├── mentor-kim.svg           # produce 김정훈 추상 아바타 (동양인 남성)
+│   ├── mentor-choi.svg          # 최수현 멘토 추상 아바타 (동양인 여성)
+│   └── mentor-koo.svg           # 구영회 멘토 추상 아바타 (동양인 남성)
 └── js/
     ├── data.js                  # 커리큘럼, 강사진, 수강생 리뷰, FAQ 데이터셋
     └── main.js                  # 모바일 메뉴, 코스 필터링, 아코디언, 모달 팝업, 폼 접수 처리

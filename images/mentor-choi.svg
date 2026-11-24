@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradChoi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b0764"/>
+      <stop offset="50%" stop-color="#581c87"/>
+      <stop offset="100%" stop-color="#9333ea"/>
+    </linearGradient>
+    <linearGradient id="skinGradChoi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEE0D2"/>
+      <stop offset="100%" stop-color="#FBBF9A"/>
+    </linearGradient>
+    <linearGradient id="hairGradChoi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b"/>
+      <stop offset="60%" stop-color="#2e1065"/>
+      <stop offset="100%" stop-color="#3b0764"/>
+    </linearGradient>
+    <linearGradient id="clothGradChoi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#171226"/>
+      <stop offset="100%" stop-color="#2d1d4c"/>
+    </linearGradient>
+    <linearGradient id="accentGradChoi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+    <filter id="glowChoi" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Circle with abstract grid & glow -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGradChoi)"/>
+  
+  <!-- Abstract cyber grid lines -->
+  <circle cx="200" cy="200" r="150" fill="none" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4 8" opacity="0.4"/>
+  <circle cx="200" cy="200" r="120" fill="none" stroke="#e879f9" stroke-width="1" opacity="0.25"/>
+  <path d="M 60 200 H 340 M 200 60 V 340" stroke="#f0abfc" stroke-width="0.8" stroke-dasharray="6 6" opacity="0.2"/>
+
+  <!-- Back Hair (Long sleek dark hair) -->
+  <path d="M 130 150 C 120 220, 110 320, 150 360 C 180 320, 180 260, 180 200 Z" fill="url(#hairGradChoi)"/>
+  <path d="M 270 150 C 280 220, 290 320, 250 360 C 220 320, 220 260, 220 200 Z" fill="url(#hairGradChoi)"/>
+
+  <!-- Body / Blazer (Smart Business Tech Outfit) -->
+  <path d="M 105 370 C 105 305, 135 275, 200 275 C 265 275, 295 305, 295 370 Z" fill="url(#clothGradChoi)"/>
+  <!-- Blazer Lapels & Inner Top -->
+  <path d="M 165 275 L 200 350 L 235 275 Z" fill="#0b0814"/>
+  <!-- Neon Piping Accent on Lapel -->
+  <path d="M 165 275 L 200 350 L 235 275" stroke="url(#accentGradChoi)" stroke-width="2.5" fill="none" filter="url(#glowChoi)"/>
+
+  <!-- Neck -->
+  <rect x="184" y="215" width="32" height="65" rx="6" fill="#FBBF9A"/>
+  <!-- Neck shadow -->
+  <path d="M 184 235 C 192 248, 208 248, 216 235 Z" fill="#EE9C74" opacity="0.6"/>
+
+  <!-- Head (Asian female shape - elegant, refined) -->
+  <path d="M 150 150 C 150 105, 250 105, 250 150 C 250 195, 230 235, 200 235 C 170 235, 150 195, 150 150 Z" fill="url(#skinGradChoi)"/>
+
+  <!-- Ears & Minimalist Tech Earring -->
+  <ellipse cx="147" cy="162" rx="6" ry="12" fill="#FBBF9A"/>
+  <ellipse cx="253" cy="162" rx="6" ry="12" fill="#FBBF9A"/>
+  <circle cx="147" cy="174" r="3" fill="#f472b6" filter="url(#glowChoi)"/>
+  <circle cx="253" cy="174" r="3" fill="#f472b6" filter="url(#glowChoi)"/>
+
+  <!-- Eyes & Eyebrows (Asian female - soft, intelligent, gentle arch) -->
+  <path d="M 165 142 C 172 138, 182 139, 187 142" stroke="#18181b" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  <path d="M 213 142 C 218 139, 228 138, 235 142" stroke="#18181b" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+  
+  <!-- Upper lash line -->
+  <path d="M 166 153 C 172 149, 182 150, 187 154" stroke="#18181b" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <circle cx="177" cy="154" r="2.8" fill="#18181b"/>
+  <circle cx="178" cy="153" r="1" fill="#ffffff"/>
+  
+  <path d="M 213 154 C 218 150, 228 149, 234 153" stroke="#18181b" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <circle cx="223" cy="154" r="2.8" fill="#18181b"/>
+  <circle cx="224" cy="153" r="1" fill="#ffffff"/>
+
+  <!-- Nose & Soft Tinted Lips -->
+  <path d="M 200 156 L 198 174 L 202 174" stroke="#EE9C74" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 190 196 C 196 193, 204 193, 210 196 C 205 202, 195 202, 190 196 Z" fill="#fb7185"/>
+
+  <!-- Front Hair (Chic layered side-swept bangs) -->
+  <path d="M 145 150 C 140 105, 155 70, 200 70 C 245 70, 260 105, 255 150 C 250 120, 235 95, 215 90 C 185 85, 158 105, 145 150 Z" fill="url(#hairGradChoi)"/>
+  <path d="M 152 110 C 175 95, 210 100, 230 125 C 210 115, 180 110, 152 110 Z" fill="#1e1035"/>
+  <!-- Hair sheen -->
+  <path d="M 168 85 C 188 78, 218 80, 238 90" stroke="#c084fc" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6"/>
+
+  <!-- Tech Automation Accent: Floating Nodes / Flow icon -->
+  <g transform="translate(45, 55)">
+    <rect width="64" height="24" rx="12" fill="#3b0764" stroke="#c084fc" stroke-width="1.5" opacity="0.9"/>
+    <text x="32" y="16" fill="#f0abfc" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle">LEAD</text>
+  </g>
+
+  <!-- Node connection graph icon -->
+  <g transform="translate(295, 55)" opacity="0.85">
+    <circle cx="10" cy="10" r="5" fill="#f472b6"/>
+    <circle cx="35" cy="18" r="5" fill="#c084fc"/>
+    <circle cx="20" cy="35" r="4" fill="#a855f7"/>
+    <line x1="10" y1="10" x2="35" y2="18" stroke="#f0abfc" stroke-width="1.5"/>
+    <line x1="10" y1="10" x2="20" y2="35" stroke="#f0abfc" stroke-width="1.5"/>
+  </g>
+</svg>
